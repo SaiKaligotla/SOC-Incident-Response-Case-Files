@@ -21,7 +21,7 @@ Each case file is documented using a strict 7-part methodology to establish time
 ### 💻 Endpoint & Malware Compromise
 | Event ID | Rule Name | Threat Type | Status | File Name |
 | :--- | :--- | :--- | :--- | :--- |
-| TBD | (Future Alert) | (Future Threat) | 🟢 TBD | TBD |
+| 44 | SOC113 - Suspicious hh.exe Usage | Malware / Malicious CHM (LOLBin hh.exe) | 🔵 False Positive | `EventID44_ SOC113 - Suspicious hh.exe Usage.md` |
 
 ### 🌐 Network & Perimeter Anomalies
 | Event ID | Rule Name | Threat Type | Status | File Name |

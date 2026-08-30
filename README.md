@@ -7,19 +7,19 @@ Each case file is documented using a strict 7-part methodology to establish time
 ## 🗂️ Investigation Categories
 
 ### 🎣 Phishing & Email Threats
-| Event ID | Rule Name | Threat Type | Status | Report Link |
+| Event ID | Rule Name | Threat Type | Status | File Name |
 | :--- | :--- | :--- | :--- | :--- |
-| 257 | SOC282 - Deceptive Mail Detected | AsyncRAT / Phishing | 🔴 Contained | [View Report](./Phishing_Investigations/SOC282_Deceptive_Mail.md) |
+| 257 | SOC282 - Deceptive Mail Detected | AsyncRAT / Phishing | 🔴 Contained | `EventID_257 - SOC282 - Phishing Alert - Deceptive Mail Detected.pdf` |
 
 ### 💻 Endpoint & Malware Compromise
-| Event ID | Rule Name | Threat Type | Status | Report Link |
+| Event ID | Rule Name | Threat Type | Status | File Name |
 | :--- | :--- | :--- | :--- | :--- |
-| TBD | SOC335 - CVE-2024-49138 Exploitation | Privilege Escalation | 🟢 TBD | (Coming Soon) |
+| TBD | (Future Alert) | (Future Threat) | 🟢 TBD | TBD |
 
 ### 🌐 Network & Perimeter Anomalies
-| Event ID | Rule Name | Threat Type | Status | Report Link |
+| Event ID | Rule Name | Threat Type | Status | File Name |
 | :--- | :--- | :--- | :--- | :--- |
-| TBD | (Future Alert) | (Future Threat) | 🟢 TBD | (Coming Soon) |
+| TBD | (Future Alert) | (Future Threat) | 🟢 TBD | TBD |
 
 ---
 

@@ -26,7 +26,7 @@ Each case file is documented using a strict 7-part methodology to establish time
 ### 🌐 Network & Perimeter Anomalies
 | Event ID | Rule Name | Threat Type | Status | File Name |
 | :--- | :--- | :--- | :--- | :--- |
-| TBD | (Future Alert) | (Future Threat) | 🟢 TBD | TBD |
+| 303 | SOC325 - Unauthorized Cloud Region Access Attempt Detected | Brute-Force / Web Attack | 🔴 Contained | `EvendtID_303- SOC325 - Unauthorized Cloud Region Access Attempt DetectedName of triggered alert.pdf` | 
 
 ---
 

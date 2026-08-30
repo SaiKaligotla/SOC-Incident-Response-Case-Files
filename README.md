@@ -27,8 +27,6 @@ This repository is a practical portfolio documenting investigations of live-simu
 
 </div>
 
-
-
 ---
 
 ## 📊 Case Dashboard
@@ -56,20 +54,19 @@ This repository is a practical portfolio documenting investigations of live-simu
 
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
-| 257 | SOC282 - Phishing Alert - Deceptive Mail Detected | AsyncRAT / Phishing | 🔴 True Positive | [EventID_257 - SOC282 - Phishing Alert - Deceptive Mail Detected.pdf](Phishing_Investigations/EventID_257%20-%20SOC282%20-%20Phishing%20Alert%20-%20Deceptive%20Mail%20Detected.pdf) |
+| 257 | SOC282 - Phishing Alert - Deceptive Mail Detected | AsyncRAT / Phishing | 🔴 True Positive | `EventID_257 - SOC282 - Phishing Alert - Deceptive Mail Detected.pdf` |
 
 ### 💻 Endpoint & Malware Compromise
 
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
-| 44 | SOC113 - Suspicious hh.exe Usage | Malicious CHM / LOLBin (hh.exe) | 🔵 False Positive | [EventID_44 - SOC113 - Suspicious hh.exe Usage.md](Endpoint_Compromise/EventID_44%20-%20SOC113%20-%20Suspicious%20hh.exe%20Usage.md) |
+| 44 | SOC113 - Suspicious hh.exe Usage | Malicious CHM / LOLBin (hh.exe) | 🔵 False Positive | `EventID_44 - SOC113 - Suspicious hh.exe Usage.md` |
 
 ### 🌐 Network & Perimeter Anomalies
 
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
-| 303 | SOC325 - Unauthorized Cloud Region Access Attempt Detected | Brute-Force / Web Attack | 🔴 True Positive (Blocked) | [EventID_303 - SOC325 - Unauthorized Cloud Region Access Attempt Detected.pdf](Network_Anomalies/EventID_303%20-%20SOC325%20-%20Unauthorized%20Cloud%20Region%20Access%20Attempt%20Detected.pdf) |
-
+| 303 | SOC325 - Unauthorized Cloud Region Access Attempt Detected | Brute-Force / Web Attack | 🔴 True Positive (Blocked) | `EventID_303 - SOC325 - Unauthorized Cloud Region Access Attempt Detected.pdf` |
 
 ---
 

@@ -1,8 +1,15 @@
 # 🛡️ Security Operations Center (SOC) Case Files
 
-This repository contains my technical documentation and Incident Response (IR) reports from investigating live-simulated cyber attacks in the LetsDefend enterprise environment. 
+This repository serves as a practical portfolio demonstrating my capabilities as a **Security Analyst** and **Incident Responder**. It contains technical documentation and IR reports from investigating live-simulated cyber attacks in the LetsDefend enterprise environment. 
 
 Each case file is documented using a strict 7-part methodology to establish timelines, identify attack vectors, and justify containment actions based on hard telemetry.
+
+## 🎯 Targeted Competencies
+
+* **As a Security Analyst:** Triaging raw SIEM alerts, correlating multi-source logs (Endpoint, Network, Email), eliminating false positives, and utilizing OSINT (VirusTotal, ANY.RUN) to verify threat intelligence.
+* **As an Incident Responder:** Formulating hypotheses, tracking lateral movement and C2 beaconing, executing rapid host containment, formulating remediation strategies, and writing auditable post-incident reports.
+
+---
 
 ## 🗂️ Investigation Categories
 

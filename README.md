@@ -67,6 +67,7 @@ This repository is a practical portfolio documenting investigations of live-simu
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
 | 303 | SOC325 - Unauthorized Cloud Region Access Attempt Detected | Brute-Force / Web Attack | 🔴 True Positive (Blocked) | `EventID_303 - SOC325 - Unauthorized Cloud Region Access Attempt Detected.pdf` |
+| 225 | SOC257 - VPN Connection Detected from Unauthorized Country | Credential Abuse / VPN MFA Bypass Attempt | 🔴 True Positive (Blocked by MFA) | `EventID_225 - SOC257 - VPN Connection Detected from Unauthorized Country.pdf` |
 
 ---
 

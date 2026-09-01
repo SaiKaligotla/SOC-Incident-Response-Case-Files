@@ -5,8 +5,8 @@
 ### Hands-on Security Operations Center investigations — triage, threat hunting, containment, and post-incident reporting
 
 ![Platform](https://img.shields.io/badge/Platform-LetsDefend-0a66c2?style=for-the-badge)
-![Total Cases](https://img.shields.io/badge/Total%20Cases-4-success?style=for-the-badge)
-![True Positives](https://img.shields.io/badge/True%20Positives-3-red?style=for-the-badge)
+![Total Cases](https://img.shields.io/badge/Total%20Cases-5-success?style=for-the-badge)
+![True Positives](https://img.shields.io/badge/True%20Positives-4-red?style=for-the-badge)
 ![False Positives](https://img.shields.io/badge/False%20Positives-1-blue?style=for-the-badge)
 
 </div>
@@ -33,11 +33,11 @@ This repository is a practical portfolio documenting investigations of live-simu
 
 | Metric | Count |
 |:--|--:|
-| **Total Investigations** | 4 |
-| 🔴 True Positives — Malicious Activity Confirmed | 3 |
+| **Total Investigations** | 5 |
+| 🔴 True Positives — Malicious Activity Confirmed | 4 |
 | 🔵 False Positives — Benign Activity Triaged | 1 |
 | 🎣 Phishing & Email Threats | 1 |
-| 💻 Endpoint & Malware Compromise | 1 |
+| 💻 Endpoint & Malware Compromise | 2 |
 | 🌐 Network & Perimeter Anomalies | 2 |
 
 **Status legend:**
@@ -60,13 +60,14 @@ This repository is a practical portfolio documenting investigations of live-simu
 
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
+| 313 | SOC335 - CVE-2024-49138 Exploitation Detected | RDP Brute Force → CLFS Privilege Escalation | 🔴 True Positive (Contained) | `EventID_313 - SOC335 - CVE-2024-49138 Exploitation Detected.md` |
 | 44 | SOC113 - Suspicious hh.exe Usage | Malicious CHM / LOLBin (hh.exe) | 🔵 False Positive | `EventID_44 - SOC113 - Suspicious hh.exe Usage.md` |
 
 ### 🌐 Network & Perimeter Anomalies
 
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
-| 225 | SOC257 - VPN Connection Detected from Unauthorized Country | Credential Abuse / Unauthorized VPN Access | 🔴 True Positive (Blocked by MFA) | `EventID_225 - SOC257 - VPN Connection Detected from Unauthorized Country.pdf` |
+| 225 | SOC257 - VPN Connection Detected from Unauthorized Country | Credential Abuse / Unauthorized VPN Access | 🔴 True Positive (Blocked by MFA) | `EventID_225 - SOC257 - VPN Connection Detected from Unauthorized Country.md` |
 | 303 | SOC325 - Unauthorized Cloud Region Access Attempt Detected | Brute-Force / Web Attack | 🔴 True Positive (Blocked) | `EventID_303 - SOC325 - Unauthorized Cloud Region Access Attempt Detected.pdf` |
 
 ---
@@ -76,11 +77,11 @@ This repository is a practical portfolio documenting investigations of live-simu
 Every case follows the same telemetry-driven workflow, documented as an Official Incident Report:
 
 1. **Alert** — Review rule name, severity, MITRE mapping, affected host/user, and timestamp; determine initial urgency.
-2. **Detection** — Pivot across Proxy, Firewall, Endpoint (EDR), Email, and VPN/Authentication logs; reconstruct process lineage (parent → child) and login timelines.
-3. **Analysis** — Verify file hashes, IPs, domains, URLs, and accounts via OSINT (VirusTotal, ANY.RUN, URLScan, URLhaus, AbuseIPDB); build an attack narrative and then challenge it against benign explanations (travel, legitimate software, red team).
-4. **Containment** — Act at the layer of the compromise: isolate hosts via EDR for endpoint incidents; reset credentials, revoke sessions, and block IPs for identity-layer incidents; document when blocking controls (firewall, MFA) already prevented the attack.
+2. **Detection** — Pivot across Proxy, Firewall, Endpoint (EDR), Email, VPN/Authentication, and Windows Security logs; reconstruct process lineage (parent → child), authentication timelines, and network connections.
+3. **Analysis** — Verify file hashes, IPs, domains, URLs, and accounts via OSINT (VirusTotal, ANY.RUN, URLScan, URLhaus, AbuseIPDB); reconstruct the full kill chain; build an attack narrative and then challenge it against benign explanations (travel, legitimate software, red team).
+4. **Containment** — Act at the layer of the compromise: isolate hosts via EDR for endpoint/live-session incidents; reset credentials, revoke sessions, and block IPs for identity-layer incidents; document when blocking controls (firewall, MFA) already prevented the attack.
 5. **Lesson Learned** — Capture detection gaps, control successes, and investigative traps.
-6. **Remediation Actions** — Record hardening steps (patching, MFA, geo-restrictions, credential resets, user training, rule tuning only where justified).
+6. **Remediation Actions** — Record hardening steps (patching, MFA, geo-restrictions, disabling exposed RDP, credential resets, user training, rule tuning only where justified).
 7. **Appendix** — Map techniques to MITRE ATT&CK and catalog all artifacts/IOCs with classifications.
 
 ---
@@ -89,15 +90,15 @@ Every case follows the same telemetry-driven workflow, documented as an Official
 
 **Security Analyst (Blue Team)**
 - SIEM alert triage and rule-based detection analysis
-- Multi-source log correlation: Endpoint, Network (Proxy/Firewall/VPN), Email Gateway, Authentication
+- Multi-source log correlation: Endpoint (EDR, process trees, terminal history), Network (Proxy/Firewall/VPN), Windows Security events (4624/4625), Email Gateway
 - False-positive elimination and evidence-based verdict decisions
 - OSINT threat verification: VirusTotal, ANY.RUN sandbox, URLScan, URLhaus, AbuseIPDB
 
 **Incident Response**
-- Attack-chain reconstruction and hypothesis-driven investigation
-- Credential abuse, C2 beaconing, and lateral movement tracking
+- Full kill-chain reconstruction: initial access → execution → privilege escalation → C2
+- Credential abuse, brute-force (RDP/SSO), C2 beaconing, and live hands-on-keyboard session detection
 - Layered containment: EDR host isolation, account/credential response, perimeter IP blocking
-- Post-incident reporting and IOC documentation
+- Post-incident reporting, IOC documentation, and remediation planning
 
 ---
 
@@ -105,10 +106,10 @@ Every case follows the same telemetry-driven workflow, documented as an Official
 
 | Category | Tools / Sources |
 |:--|:--|
-| **SIEM / Log Management** | Proxy Logs, Firewall Traffic, Email Gateway Logs, VPN / Authentication Logs |
-| **Endpoint Detection & Response (EDR)** | Process Trees, Process Lineage, Terminal History, Network Actions, Host Containment |
+| **SIEM / Log Management** | Proxy Logs, Firewall Traffic, Email Gateway Logs, VPN / Authentication Logs, Windows Security Events (4624/4625) |
+| **Endpoint Detection & Response (EDR)** | Process Trees, Process Lineage, Terminal/Bash History, Network Actions, Host Containment |
 | **Threat Intelligence (OSINT)** | VirusTotal, ANY.RUN Sandbox, Hybrid Analysis, URLScan, URLhaus, AbuseIPDB |
-| **Frameworks** | MITRE ATT&CK — T1566 Phishing, T1204 User Execution, T1218.001 LOLBins, T1133 External Remote Services, T1621 MFA Request Generation, T1595 Active Scanning, T1078 Valid Accounts, and more |
+| **Frameworks** | MITRE ATT&CK — T1110 Brute Force, T1133 External Remote Services, T1021.001 RDP, T1059.001 PowerShell, T1068 Privilege Escalation (CVE-2024-49138), T1621 MFA Request Generation, T1566 Phishing, T1204 User Execution, T1218.001 LOLBins, and more |
 
 ---
 

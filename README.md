@@ -61,13 +61,13 @@ This repository is a practical portfolio documenting investigations of live-simu
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
 | 313 | SOC335 - CVE-2024-49138 Exploitation Detected | RDP Brute Force → CLFS Privilege Escalation | 🔴 True Positive (Contained) | `EventID_313 - SOC335 - CVE-2024-49138 Exploitation Detected.md` |
-| 44 | SOC113 - Suspicious hh.exe Usage | Malicious CHM / LOLBin (hh.exe) | 🔵 False Positive | `EventID_44 - SOC113 - Suspicious hh.exe Usage.md` |
+| 44 | SOC113 - Suspicious hh.exe Usage | LOLBin (hh.exe) / Benign WinRAR Help File | 🔵 False Positive | `EventID_44 - SOC113 - Suspicious hh.exe Usage.md` |
 
 ### 🌐 Network & Perimeter Anomalies
 
 | Event ID | Rule Name | Threat Type | Status | Case File |
 |:--|:--|:--|:--|:--|
-| 225 | SOC257 - VPN Connection Detected from Unauthorized Country | Credential Abuse / Unauthorized VPN Access | 🔴 True Positive (Blocked by MFA) | `EventID_225 - SOC257 - VPN Connection Detected from Unauthorized Country.md` |
+| 225 | SOC257 - VPN Connection Detected from Unauthorized Country | Credential Abuse / Unauthorized VPN Access | 🔴 True Positive (Blocked by MFA) | `EventID_225 - SOC257 - VPN Connection Detected from Unauthorized Country.pdf` |
 | 303 | SOC325 - Unauthorized Cloud Region Access Attempt Detected | Brute-Force / Web Attack | 🔴 True Positive (Blocked) | `EventID_303 - SOC325 - Unauthorized Cloud Region Access Attempt Detected.pdf` |
 
 ---
